@@ -45,4 +45,3 @@ class _AppPageState extends State<AppPage> {
     );
   }
 }
-// widget.isLoggedIn ? const HomePage() : const LoginPage()
