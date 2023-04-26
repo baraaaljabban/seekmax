@@ -1,4 +1,9 @@
+// ignore_for_file: annotate_overrides, overridden_fields
+
 import 'dart:convert';
+
+import 'package:seekmax/features/available_jobs/domain/entities/job.dart';
+import 'package:seekmax/features/available_jobs/domain/entities/salary_rang.dart';
 
 class AvailableJobsResponse {
   Data data;
@@ -33,7 +38,7 @@ class Data {
 }
 
 class Jobs {
-  List<Job> jobs;
+  List<JobModel> jobs;
 
   Jobs({
     required this.jobs,
@@ -41,50 +46,57 @@ class Jobs {
 
   factory Jobs.fromMap(Map<String, dynamic> map) {
     return Jobs(
-      jobs: List<Job>.from(map['jobs']?.map((x) => Job.fromMap(x))),
+      jobs: List<JobModel>.from(map['jobs']?.map((x) => JobModel.fromMap(x))),
     );
   }
 
   factory Jobs.fromJson(String source) => Jobs.fromMap(json.decode(source));
 }
 
-class Job {
+class JobModel extends Job {
   String description;
   String positionTitle;
-  SalaryRange salaryRange;
+  SalaryRangeModel salaryRangeModel;
 
-  Job({
+  JobModel({
     required this.description,
     required this.positionTitle,
-    required this.salaryRange,
-  });
+    required this.salaryRangeModel,
+  }) : super(
+          description: description,
+          positionTitle: positionTitle,
+          salaryRange: salaryRangeModel,
+        );
 
-  factory Job.fromMap(Map<String, dynamic> map) {
-    return Job(
+  factory JobModel.fromMap(Map<String, dynamic> map) {
+    return JobModel(
       description: map['description'] ?? '',
       positionTitle: map['positionTitle'] ?? '',
-      salaryRange: SalaryRange.fromMap(map['salaryRange']),
+      salaryRangeModel: SalaryRangeModel.fromMap(map['salaryRange']),
     );
   }
 
-  factory Job.fromJson(String source) => Job.fromMap(json.decode(source));
+  factory JobModel.fromJson(String source) => JobModel.fromMap(json.decode(source));
 }
 
-class SalaryRange {
+class SalaryRangeModel extends SalaryRange {
   int min;
   int max;
 
-  SalaryRange({
+  SalaryRangeModel({
     required this.min,
     required this.max,
-  });
+  }) : super(
+          max: max,
+          min: min,
+        );
 
-  factory SalaryRange.fromMap(Map<String, dynamic> map) {
-    return SalaryRange(
+  factory SalaryRangeModel.fromMap(Map<String, dynamic> map) {
+    return SalaryRangeModel(
       min: map['min']?.toInt() ?? 0,
       max: map['max']?.toInt() ?? 0,
     );
   }
 
-  factory SalaryRange.fromJson(String source) => SalaryRange.fromMap(json.decode(source));
+  factory SalaryRangeModel.fromJson(String source) => SalaryRangeModel.fromMap(json.decode(source));
 }
