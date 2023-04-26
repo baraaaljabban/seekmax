@@ -12,9 +12,11 @@ class AvailableJobsRepositoryImpl extends AvailableJobsRepository with CustomErr
     required this.remoteDataSource,
   });
   @override
-  Future<Either<Failure, List<Job>>> fetchAvailableJobs() async {
+  Future<Either<Failure, List<Job>>> fetchAvailableJobs({required int page}) async {
     try {
-      final loginResponse = await remoteDataSource.fetchAvailableJobs();
+      final loginResponse = await remoteDataSource.fetchAvailableJobs(
+        page: page,
+      );
       return right(loginResponse.jobs.jobs);
     } catch (e) {
       if (e is Exception) {

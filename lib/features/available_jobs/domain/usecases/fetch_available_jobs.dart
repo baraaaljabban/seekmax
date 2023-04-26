@@ -5,13 +5,13 @@ import 'package:seekmax/core/errors/failures.dart';
 import 'package:seekmax/features/available_jobs/domain/entities/job.dart';
 import 'package:seekmax/features/available_jobs/domain/repositories/available_jobs_repository.dart';
 
-class FetchAvailableJobs extends UseCase<List<Job>, void> {
+class FetchAvailableJobs extends UseCase<List<Job>, int> {
   final AvailableJobsRepository repository;
   FetchAvailableJobs({
     required this.repository,
   });
   @override
-  Future<Either<Failure, List<Job>>> call({void params}) async {
-    return await repository.fetchAvailableJobs();
+  Future<Either<Failure, List<Job>>> call({required int params}) async {
+    return await repository.fetchAvailableJobs(page: params);
   }
 }

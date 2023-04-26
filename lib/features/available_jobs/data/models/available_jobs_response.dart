@@ -56,17 +56,17 @@ class Jobs {
 class JobModel extends Job {
   String description;
   String positionTitle;
-  SalaryRangeModel salaryRangeModel;
+  // SalaryRangeModel salaryRangeModel;
   String id;
   JobModel({
     required this.description,
     required this.positionTitle,
-    required this.salaryRangeModel,
+    // required this.salaryRangeModel,
     required this.id,
   }) : super(
           description: description,
           positionTitle: positionTitle,
-          salaryRange: salaryRangeModel,
+          // salaryRange: salaryRangeModel,
           jobID: id,
         );
 
@@ -75,7 +75,7 @@ class JobModel extends Job {
       description: map['description'] ?? '',
       id: map['_id'] ?? '',
       positionTitle: map['positionTitle'] ?? '',
-      salaryRangeModel: SalaryRangeModel.fromMap(map['salaryRange']),
+      // salaryRangeModel: SalaryRangeModel.fromMap(map['salaryRange']),
     );
   }
 

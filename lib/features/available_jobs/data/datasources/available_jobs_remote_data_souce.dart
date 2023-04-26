@@ -4,7 +4,7 @@ import 'package:seekmax/core/errors/error_handler.dart';
 import 'package:seekmax/features/available_jobs/data/models/available_jobs_response.dart';
 
 abstract class AvailableJobsRemoteDataSource {
-  Future<AvailableJobsResponse> fetchAvailableJobs();
+  Future<AvailableJobsResponse> fetchAvailableJobs({required int page});
 }
 
 class AvailableJobsRemoteDataSourceImpl extends AvailableJobsRemoteDataSource with CustomErrorHandler {
@@ -14,24 +14,26 @@ class AvailableJobsRemoteDataSourceImpl extends AvailableJobsRemoteDataSource wi
   });
 
   @override
-  Future<AvailableJobsResponse> fetchAvailableJobs() async {
-    const String query = r'''
-    query Jobs {
-      jobs {
+  Future<AvailableJobsResponse> fetchAvailableJobs({required int page}) async {
+    String query = r'''
+    query Jobs($page: Int, $limit: Int) {
+      jobs(page: $page, limit: $limit) {
+        page
         jobs {
           _id
-          description
           positionTitle
-          salaryRange {
-            min
-            max
-          }
+          description
         }
+        hasNext
       }
     }
   ''';
     final QueryOptions options = QueryOptions(
       document: gql(query),
+      variables: <String, dynamic>{
+        'page': page,
+        'limit': 7,
+      },
     );
 
     final QueryResult result = await client.query(options);

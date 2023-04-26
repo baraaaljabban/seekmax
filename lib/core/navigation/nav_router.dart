@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:seekmax/core/navigation/nav_args.dart';
 import 'package:seekmax/features/app/presentation/pages/app_page.dart';
 import 'package:seekmax/features/home/presentation/pages/home_page.dart';
+import 'package:seekmax/features/job_detailes/presentation/pages/job_details.dart';
 import 'package:seekmax/features/login/presentation/pages/login_page.dart';
 import 'package:seekmax/features/start_up/presentation/pages/start_up_page.dart';
 
@@ -11,7 +13,7 @@ class NavRouter {
   static const String landingRoute = '/home';
   static const String loginRoute = '/login';
   static const String userProfile = '/userProfile';
-  static const String searchView = '/search_view';
+  static const String jobDetails = '/jobDetails';
 
   static MaterialPageRoute _pageRoute(Widget page, settings, {bool fullscreenDialog = false}) {
     return MaterialPageRoute(builder: (_) => page, settings: settings, fullscreenDialog: fullscreenDialog);
@@ -35,19 +37,11 @@ class NavRouter {
           const HomePage(),
           settings,
         );
-      // case userProfile:
-      //   return _pageRoute(
-      //     UserProfilePage(),
-      //     settings,
-      //   );
-
-      // case searchView:
-      //   return _pageRoute(
-      //     Search(
-      //       argument: settings.arguments as SearchScreenArgument,
-      //     ),
-      //     settings,
-      //   );
+      case jobDetails:
+        return _pageRoute(
+          JobDetailsPage(jobDetailsArgs: settings.arguments as JobDetailsArgs),
+          settings,
+        );
 
       default:
         return MaterialPageRoute(
