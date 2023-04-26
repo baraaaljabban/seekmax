@@ -19,6 +19,7 @@ class AvailableJobsRemoteDataSourceImpl extends AvailableJobsRemoteDataSource wi
     query Jobs {
       jobs {
         jobs {
+          _id
           description
           positionTitle
           salaryRange {

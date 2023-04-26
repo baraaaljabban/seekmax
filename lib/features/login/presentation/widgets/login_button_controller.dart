@@ -27,7 +27,7 @@ class _LoginButtonControllerState extends State<LoginButtonController> {
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.resolveWith<Color?>(
               (Set<MaterialState> states) {
-                return BlocProvider.of<LoginBloc>(context).enableLoginButton ? ThemeColor.teal400 : ThemeColor.teal200;
+                return BlocProvider.of<LoginBloc>(context).enableLoginButton ? ThemeColor.buttonBackground : ThemeColor.brandBackground;
               },
             ),
             fixedSize: MaterialStateProperty.all(
@@ -54,7 +54,7 @@ class _LoginButtonControllerState extends State<LoginButtonController> {
                 builder: (context, state) {
                   if (state is LoginLoadingState) {
                     return const LoadingScreen(
-                      color: ThemeColor.white,
+                      color: Colors.white,
                       size: 20,
                     );
                   } else {
@@ -66,7 +66,7 @@ class _LoginButtonControllerState extends State<LoginButtonController> {
                         return Text(
                           'LogIn',
                           style: AppStyle.largeRegular.copyWith(
-                            color: BlocProvider.of<LoginBloc>(context).enableLoginButton ? ThemeColor.white : ThemeColor.grey300,
+                            color: BlocProvider.of<LoginBloc>(context).enableLoginButton ? ThemeColor.buttonBackground : Colors.grey,
                           ),
                         );
                       },

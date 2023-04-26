@@ -20,7 +20,7 @@ class _AppPageState extends State<AppPage> {
       theme: ThemeData(
         brightness: Brightness.light,
         fontFamily: 'Georgia',
-        scaffoldBackgroundColor: ThemeColor.white,
+        scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(
             color: Colors.black,

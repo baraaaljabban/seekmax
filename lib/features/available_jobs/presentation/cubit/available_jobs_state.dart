@@ -8,3 +8,19 @@ abstract class AvailableJobsState extends Equatable {
 }
 
 class AvailableJobsInitial extends AvailableJobsState {}
+
+class AvailableJobsLoadingState extends AvailableJobsState {}
+
+class AvailableJobsErrorState extends AvailableJobsState {
+  final String message;
+  const AvailableJobsErrorState({
+    required this.message,
+  });
+}
+
+class AvailableJobsSuccessState extends AvailableJobsState {
+  final List<Job> jobs;
+  const AvailableJobsSuccessState({
+    required this.jobs,
+  });
+}

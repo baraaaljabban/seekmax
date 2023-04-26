@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seekmax/core/dependency_registrar/dependencies.dart';
+import 'package:seekmax/features/available_jobs/presentation/cubit/available_jobs_cubit.dart';
 import 'package:seekmax/features/home/presentation/bloc/home_bloc.dart';
 import 'package:seekmax/features/login/presentation/bloc/login_bloc.dart';
 import 'package:seekmax/features/start_up/presentation/cubit/start_up_cubit.dart';
@@ -26,6 +27,9 @@ class _BaseBlocProviderWidgetState extends State<BaseBlocProviderWidget> {
         ),
         BlocProvider<LoginBloc>(
           create: (context) => sl.get<LoginBloc>(),
+        ),
+        BlocProvider<AvailableJobsCubit>(
+          create: (context) => sl.get<AvailableJobsCubit>(),
         ),
       ],
       child: widget.child,

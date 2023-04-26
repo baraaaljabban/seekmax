@@ -15,7 +15,7 @@ class AvailableJobsRepositoryImpl extends AvailableJobsRepository with CustomErr
   Future<Either<Failure, List<Job>>> fetchAvailableJobs() async {
     try {
       final loginResponse = await remoteDataSource.fetchAvailableJobs();
-      return right(loginResponse.data.jobs.jobs);
+      return right(loginResponse.jobs.jobs);
     } catch (e) {
       if (e is Exception) {
         return Left(mapCommonExceptionToFailure(e));

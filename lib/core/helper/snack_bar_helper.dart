@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:seekmax/core/theme/app_syle.dart';
-import 'package:seekmax/core/theme/theme_color.dart';
 import 'package:seekmax/features/login/presentation/pages/login_page.dart';
 
 final GlobalKey<ScaffoldMessengerState> snackbarKey = GlobalKey<ScaffoldMessengerState>();
@@ -62,23 +60,6 @@ mixin SnackBarHelper {
         duration: const Duration(
           seconds: 18,
         ),
-      ),
-    );
-  }
-
-  void showNoInternetSnackBar(BuildContext context, {String? message}) {
-    ScaffoldMessenger.of(context).removeCurrentSnackBar();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        margin: EdgeInsets.zero,
-        behavior: SnackBarBehavior.floating,
-        content: Text(
-          message ?? "",
-          style: AppStyle.baseSemibold.copyWith(color: ThemeColor.white),
-          textAlign: TextAlign.center,
-        ),
-        backgroundColor: ThemeColor.red400,
-        duration: const Duration(seconds: 5),
       ),
     );
   }

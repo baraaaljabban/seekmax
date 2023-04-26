@@ -5,36 +5,36 @@ import 'dart:convert';
 import 'package:seekmax/features/available_jobs/domain/entities/job.dart';
 import 'package:seekmax/features/available_jobs/domain/entities/salary_rang.dart';
 
+// class AvailableJobsResponse {
+//   Data data;
+
+//   AvailableJobsResponse({
+//     required this.data,
+//   });
+
+//   factory AvailableJobsResponse.fromMap(Map<String, dynamic> map) {
+//     return AvailableJobsResponse(
+//       data: Data.fromMap(map['data']),
+//     );
+//   }
+
+//   factory AvailableJobsResponse.fromJson(String source) => AvailableJobsResponse.fromMap(json.decode(source));
+// }
+
 class AvailableJobsResponse {
-  Data data;
+  Jobs jobs;
 
   AvailableJobsResponse({
-    required this.data,
+    required this.jobs,
   });
 
   factory AvailableJobsResponse.fromMap(Map<String, dynamic> map) {
     return AvailableJobsResponse(
-      data: Data.fromMap(map['data']),
-    );
-  }
-
-  factory AvailableJobsResponse.fromJson(String source) => AvailableJobsResponse.fromMap(json.decode(source));
-}
-
-class Data {
-  Jobs jobs;
-
-  Data({
-    required this.jobs,
-  });
-
-  factory Data.fromMap(Map<String, dynamic> map) {
-    return Data(
       jobs: Jobs.fromMap(map['jobs']),
     );
   }
 
-  factory Data.fromJson(String source) => Data.fromMap(json.decode(source));
+  factory AvailableJobsResponse.fromJson(String source) => AvailableJobsResponse.fromMap(json.decode(source));
 }
 
 class Jobs {
@@ -57,20 +57,23 @@ class JobModel extends Job {
   String description;
   String positionTitle;
   SalaryRangeModel salaryRangeModel;
-
+  String id;
   JobModel({
     required this.description,
     required this.positionTitle,
     required this.salaryRangeModel,
+    required this.id,
   }) : super(
           description: description,
           positionTitle: positionTitle,
           salaryRange: salaryRangeModel,
+          jobID: id,
         );
 
   factory JobModel.fromMap(Map<String, dynamic> map) {
     return JobModel(
       description: map['description'] ?? '',
+      id: map['_id'] ?? '',
       positionTitle: map['positionTitle'] ?? '',
       salaryRangeModel: SalaryRangeModel.fromMap(map['salaryRange']),
     );

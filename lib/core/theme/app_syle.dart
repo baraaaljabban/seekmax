@@ -4,9 +4,9 @@ import 'package:seekmax/core/theme/theme_color.dart';
 class AppStyle {
   AppStyle._();
 
-  static TextStyle defaultStyle = const TextStyle(
+  static TextStyle defaultStyle = TextStyle(
     fontFamily: 'ProximaNova',
-    color: ThemeColor.grey900,
+    color: Colors.grey[900],
   );
 
   static TextStyle title = defaultStyle.copyWith(fontSize: 14, fontWeight: FontWeight.w700);
@@ -42,81 +42,23 @@ class AppStyle {
   );
 
   static TextStyle baseBold = defaultStyle.copyWith(
-    color: ThemeColor.grey700,
+    color: Colors.grey[700],
     fontSize: 14.0,
     fontWeight: FontWeight.w700,
     height: 1.43,
   );
 
   static TextStyle baseSemibold = defaultStyle.copyWith(
-    color: ThemeColor.grey700,
+    color: Colors.grey[700],
     fontSize: 14.0,
     fontWeight: FontWeight.w600,
     height: 1.43,
   );
 
   static TextStyle baseRegular = defaultStyle.copyWith(
-    color: ThemeColor.grey700,
+    color: Colors.grey[700],
     fontSize: 14.0,
     fontWeight: FontWeight.w400,
     height: 1.43,
-  );
-
-  static TextStyle baseUnderline = defaultStyle.copyWith(
-    color: ThemeColor.teal400,
-    fontSize: 14.0,
-    decoration: TextDecoration.underline,
-  );
-
-  static TextStyle smallBold = defaultStyle.copyWith(
-    color: ThemeColor.grey400,
-    fontSize: 12.0,
-    fontWeight: FontWeight.w400,
-    height: 1.5,
-  );
-
-  static TextStyle smallSemibold = defaultStyle.copyWith(
-    color: ThemeColor.grey400,
-    fontSize: 12.0,
-    fontWeight: FontWeight.w600,
-    height: 1.5,
-  );
-
-  static TextStyle smallRegular = defaultStyle.copyWith(
-    color: ThemeColor.grey700,
-    fontSize: 12.0,
-    fontWeight: FontWeight.w400,
-    height: 1.5,
-  );
-
-  static TextStyle miniSemibold = defaultStyle.copyWith(
-    color: ThemeColor.grey400,
-    fontSize: 11.0,
-    fontWeight: FontWeight.w600,
-    height: 1.45,
-  );
-
-  static TextStyle miniRegular = defaultStyle.copyWith(
-    color: ThemeColor.grey400,
-    fontSize: 11.0,
-    fontWeight: FontWeight.w400,
-    height: 1.22,
-  );
-  static TextStyle miniBold = defaultStyle.copyWith(
-    color: ThemeColor.grey400,
-    fontSize: 11.0,
-    fontWeight: FontWeight.w700,
-    height: 1.45,
-  );
-  static TextStyle emojiStyle = defaultStyle.copyWith(
-    fontSize: 14.0,
-    fontWeight: FontWeight.normal,
-    height: 1.20,
-  );
-  static TextStyle microBold = defaultStyle.copyWith(
-    color: ThemeColor.grey400,
-    fontSize: 10,
-    fontWeight: FontWeight.w700,
-    height: 1.3,
   );
 }

@@ -4,10 +4,11 @@ class Job {
   String description;
   String positionTitle;
   SalaryRange salaryRange;
-
+  String jobID;
   Job({
     required this.description,
     required this.positionTitle,
     required this.salaryRange,
+    required this.jobID,
   });
 }

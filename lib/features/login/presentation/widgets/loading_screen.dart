@@ -4,7 +4,7 @@ import 'package:seekmax/core/theme/theme_color.dart';
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({
     this.size = 30,
-    this.color = ThemeColor.teal400,
+    this.color = ThemeColor.brandBackground,
     Key? key,
   }) : super(key: key);
 

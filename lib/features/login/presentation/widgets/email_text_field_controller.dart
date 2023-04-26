@@ -31,7 +31,7 @@ class EmailTextField extends StatelessWidget with LoginOutlineInputBorder {
             disabledBorder: enableBorder(),
             label: Text(
               'Username',
-              style: AppStyle.largeRegular.copyWith(color: ThemeColor.grey400),
+              style: AppStyle.largeRegular.copyWith(color: Colors.grey[400]),
             ),
           ),
           controller: _emailController,

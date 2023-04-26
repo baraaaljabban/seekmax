@@ -37,7 +37,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> with LoginOutline
             disabledBorder: enableBorder(),
             label: Text(
               'Password',
-              style: AppStyle.largeRegular.copyWith(color: ThemeColor.grey400),
+              style: AppStyle.largeRegular.copyWith(color: Colors.grey[400]),
             ),
           ),
           onChanged: (password) {
