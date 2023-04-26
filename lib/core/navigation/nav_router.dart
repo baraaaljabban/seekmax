@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seekmax/core/navigation/nav_args.dart';
-import 'package:seekmax/features/app/presentation/pages/app_page.dart';
 import 'package:seekmax/features/home/presentation/pages/home_page.dart';
-import 'package:seekmax/features/job_detailes/presentation/pages/job_details.dart';
+import 'package:seekmax/features/job_details/presentation/pages/job_details.dart';
 import 'package:seekmax/features/login/presentation/pages/login_page.dart';
 import 'package:seekmax/features/start_up/presentation/pages/start_up_page.dart';
 
@@ -16,14 +15,18 @@ class NavRouter {
   static const String jobDetails = '/jobDetails';
 
   static MaterialPageRoute _pageRoute(Widget page, settings, {bool fullscreenDialog = false}) {
-    return MaterialPageRoute(builder: (_) => page, settings: settings, fullscreenDialog: fullscreenDialog);
+    return MaterialPageRoute(
+      builder: (_) => page,
+      settings: settings,
+      fullscreenDialog: fullscreenDialog,
+    );
   }
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case initialRoute:
         return _pageRoute(
-          StartUpPage(),
+          const StartUpPage(),
           settings,
         );
 
