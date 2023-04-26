@@ -67,3 +67,11 @@ class ForbiddenException implements CustomException {
   @override
   String toString() => 'ForbiddenException(statusCode: $statusCode, body: $body)';
 }
+
+class LocalDataSourceException implements CustomException {
+  final String message;
+
+  LocalDataSourceException({
+    required this.message,
+  });
+}

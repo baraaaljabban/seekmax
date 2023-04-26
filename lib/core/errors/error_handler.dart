@@ -64,6 +64,11 @@ mixin ErrorHandler {
       return JsonFormatFailure(message: "format_failure");
     }
 
+    if (exception is LocalDataSourceException) {
+      debugPrint("FormatException ${exception.message}");
+      return LocalDataSourceFailure(message: "reading_local_db_failed");
+    }
+
     if (exception is ConnectionUnavailableException) {
       debugPrint("ConnectionUnavailableException");
       return ConnectionUnavailableFailure();

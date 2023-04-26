@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:seekmax/features/app/presentation/pages/app.dart';
+import 'package:seekmax/features/app/presentation/pages/app_page.dart';
 import 'package:seekmax/features/home/presentation/pages/home_page.dart';
 import 'package:seekmax/features/login/presentation/pages/login_page.dart';
+import 'package:seekmax/features/start_up/presentation/pages/start_up_page.dart';
 
 class NavRouter {
   NavRouter._();
@@ -20,12 +21,13 @@ class NavRouter {
     switch (settings.name) {
       case initialRoute:
         return _pageRoute(
-          AppPage(),
+          StartUpPage(),
           settings,
         );
+
       case loginRoute:
         return _pageRoute(
-          LoginPage(),
+          const LoginPage(),
           settings,
         );
       case landingRoute:

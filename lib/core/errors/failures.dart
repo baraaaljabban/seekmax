@@ -21,8 +21,7 @@ class JsonFormatFailure extends Failure {
 
 /// Mobile is not connecting to wifi or data connection
 class ConnectionUnavailableFailure extends Failure {
-  ConnectionUnavailableFailure({String? message})
-      : super(message: message ?? 'No internet connection');
+  ConnectionUnavailableFailure({String? message}) : super(message: message ?? 'No internet connection');
 
   @override
   String get detailedMessage => '$message [err: conn_err]';
@@ -31,29 +30,24 @@ class ConnectionUnavailableFailure extends Failure {
 /// Thrown if server http status is 5xx
 class ServerFailure extends Failure {
   int? statusCode;
-  ServerFailure({int? statusCode, required String message})
-      : super(message: message);
+  ServerFailure({int? statusCode, required String message}) : super(message: message);
 
   @override
-  String get detailedMessage =>
-      '$message [err: server_err] [statusCode: $statusCode ?? 0]';
+  String get detailedMessage => '$message [err: server_err] [statusCode: $statusCode ?? 0]';
 }
 
 /// Thrown if the status code return is not being handled
 class UnhandledServerFailure extends Failure {
   int? statusCode;
-  UnhandledServerFailure({int? statusCode, required String message})
-      : super(message: message);
+  UnhandledServerFailure({int? statusCode, required String message}) : super(message: message);
 
   @override
-  String get detailedMessage =>
-      '$message [err: unhandle_err] [statusCode: $statusCode]';
+  String get detailedMessage => '$message [err: unhandle_err] [statusCode: $statusCode]';
 }
 
 /// Thrown if there is error in logic
 class LogicFailure extends Failure {
-  LogicFailure({required String title, required String message})
-      : super(title: title, message: message);
+  LogicFailure({required String title, required String message}) : super(title: title, message: message);
 
   @override
   String get detailedMessage => message;
@@ -63,45 +57,37 @@ class LogicFailure extends Failure {
 class UnhandledFailure extends Failure {
   final String className;
   final StackTrace? stackTrace;
-  UnhandledFailure(
-      {required this.className, required String message, this.stackTrace})
-      : super(message: message);
+  UnhandledFailure({required this.className, required String message, this.stackTrace}) : super(message: message);
 
   @override
-  String get detailedMessage =>
-      '$message ${stackTrace.toString()}\n[err: unhandle_failure] \n[className: $className]';
+  String get detailedMessage => '$message ${stackTrace.toString()}\n[err: unhandle_failure] \n[className: $className]';
 }
 
-class ServerUnavilableFailure extends Failure {
+class ServerUnavailableFailure extends Failure {
   int? statusCode;
-  ServerUnavilableFailure({int? statusCode, required String message})
-      : super(message: message);
+  ServerUnavailableFailure({int? statusCode, required String message}) : super(message: message);
 
   @override
-  String get detailedMessage =>
-      '$message [err: server_err] [statusCode: $statusCode ?? 0]';
+  String get detailedMessage => '$message [err: server_err] [statusCode: $statusCode ?? 0]';
 }
 
 class ForbiddenFailure extends Failure {
   int? statusCode;
-  ForbiddenFailure({int? statusCode, required String message})
-      : super(message: message);
+  ForbiddenFailure({int? statusCode, required String message}) : super(message: message);
 
   @override
-  String get detailedMessage =>
-      '$message [err: unauthorized_err] [statusCode: $statusCode ?? 0]';
+  String get detailedMessage => '$message [err: unauthorized_err] [statusCode: $statusCode ?? 0]';
 }
 
-class MfaRequiredFailure extends Failure {
-  MfaRequiredFailure({required String title, required String message})
-      : super(title: title, message: message);
+class InputFailure extends Failure {
+  InputFailure({required String message}) : super(message: message);
 
   @override
   String get detailedMessage => message;
 }
 
-class InputFailure extends Failure {
-  InputFailure({required String message}) : super(message: message);
+class LocalDataSourceFailure extends Failure {
+  LocalDataSourceFailure({required String message}) : super(message: message);
 
   @override
   String get detailedMessage => message;
