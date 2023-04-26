@@ -38,11 +38,10 @@ class ServerFailure extends Failure {
 
 /// Thrown if the status code return is not being handled
 class UnhandledServerFailure extends Failure {
-  int? statusCode;
-  UnhandledServerFailure({int? statusCode, required String message}) : super(message: message);
+  UnhandledServerFailure({required String message}) : super(message: message);
 
   @override
-  String get detailedMessage => '$message [err: unhandle_err] [statusCode: $statusCode]';
+  String get detailedMessage => '$message [err: unhandle_err]  ';
 }
 
 /// Thrown if there is error in logic
@@ -55,12 +54,11 @@ class LogicFailure extends Failure {
 
 /// Thrown if some exception is not being handle properly
 class UnhandledFailure extends Failure {
-  final String className;
   final StackTrace? stackTrace;
-  UnhandledFailure({required this.className, required String message, this.stackTrace}) : super(message: message);
+  UnhandledFailure({required String message, this.stackTrace}) : super(message: message);
 
   @override
-  String get detailedMessage => '$message ${stackTrace.toString()}\n[err: unhandle_failure] \n[className: $className]';
+  String get detailedMessage => '$message ${stackTrace.toString()}\n[err: unhandle_failure] ';
 }
 
 class ServerUnavailableFailure extends Failure {

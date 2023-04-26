@@ -49,13 +49,12 @@ class ServerErrorException implements CustomException {
 ///
 /// [body] raw response return from API
 class UnhandledServerErrorException implements CustomException {
-  final int statusCode;
   final String body;
 
-  UnhandledServerErrorException({required this.statusCode, required this.body});
+  UnhandledServerErrorException({required this.body});
 
   @override
-  String toString() => 'UnhandledServerErrorException(statusCode: $statusCode, body: $body)';
+  String toString() => 'UnhandledServerErrorException(  body: $body)';
 }
 
 class ForbiddenException implements CustomException {

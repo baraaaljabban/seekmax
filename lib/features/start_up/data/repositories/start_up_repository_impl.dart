@@ -5,7 +5,7 @@ import 'package:seekmax/core/errors/failures.dart';
 import 'package:seekmax/features/start_up/data/datasources/start_up_local_data_source.dart';
 import 'package:seekmax/features/start_up/domain/repositories/start_up_repository.dart';
 
-class StartUpRepositoryImpl extends StartUpRepository with ErrorHandler {
+class StartUpRepositoryImpl extends StartUpRepository with CustomErrorHandler {
   final StartUpLocalDataSource localDataSource;
   StartUpRepositoryImpl({
     required this.localDataSource,
@@ -23,7 +23,6 @@ class StartUpRepositoryImpl extends StartUpRepository with ErrorHandler {
       return Future.value(
         Left(
           UnhandledFailure(
-            className: e.runtimeType.toString(),
             message: e.toString(),
           ),
         ),
