@@ -30,7 +30,10 @@ class JobDetailsController extends StatelessWidget {
             height: 16,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 8.0, right: 8),
+            padding: const EdgeInsets.only(
+              left: 8.0,
+              right: 8,
+            ),
             child: Text(
               jobDetails.description,
               style: AppStyle.subtitle1,
