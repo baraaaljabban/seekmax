@@ -32,8 +32,9 @@ class JobDetailsCubit extends Cubit<JobDetailsState> {
   void onApplyForJob() async {
     final result = await applyForJob(params: jobId);
     result.fold(
-      (l) => emit(JobDetailsFailedState(
-        message: l.message,
+      (l) => emit(ApplyResultState(
+        applied: false,
+        jobId: jobId,
       )),
       (r) => {
         emit(ApplyResultState(
