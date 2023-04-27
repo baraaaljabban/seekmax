@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:seekmax/core/navigation/nav_router.dart';
 import 'package:seekmax/core/navigation/navigation_service.dart';
-import 'package:seekmax/core/theme/theme_color.dart';
 
 class AppPage extends StatefulWidget {
   const AppPage({

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seekmax/core/helper/snack_bar_helper.dart';
-import 'package:seekmax/core/theme/app_syle.dart';
 import 'package:seekmax/core/theme/theme_color.dart';
 import 'package:seekmax/features/available_jobs/presentation/cubit/available_jobs_cubit.dart';
 import 'package:seekmax/features/available_jobs/presentation/widgets/jobs_list_view_controller.dart';

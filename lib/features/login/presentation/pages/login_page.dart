@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> with SnackBarHelper {
           }
         },
         child: Center(
-          child: Container(
+          child: SizedBox(
             height: 350,
             width: 350,
             child: Column(

@@ -1,7 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:seekmax/core/errors/error_handler.dart';
-import 'package:seekmax/core/errors/failed_response.dart';
 import 'package:seekmax/core/errors/failures.dart';
 import 'package:seekmax/features/login/data/datasources/login_local_data_source.dart';
 import 'package:seekmax/features/login/data/datasources/login_remote_data_source.dart';

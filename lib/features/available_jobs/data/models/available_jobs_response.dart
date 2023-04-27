@@ -3,23 +3,6 @@
 import 'dart:convert';
 
 import 'package:seekmax/features/available_jobs/domain/entities/job.dart';
-import 'package:seekmax/features/available_jobs/domain/entities/salary_rang.dart';
-
-// class AvailableJobsResponse {
-//   Data data;
-
-//   AvailableJobsResponse({
-//     required this.data,
-//   });
-
-//   factory AvailableJobsResponse.fromMap(Map<String, dynamic> map) {
-//     return AvailableJobsResponse(
-//       data: Data.fromMap(map['data']),
-//     );
-//   }
-
-//   factory AvailableJobsResponse.fromJson(String source) => AvailableJobsResponse.fromMap(json.decode(source));
-// }
 
 class AvailableJobsResponse {
   Jobs jobs;

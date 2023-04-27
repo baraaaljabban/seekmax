@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:seekmax/core/theme/theme_color.dart';
 
 class AppStyle {
   AppStyle._();

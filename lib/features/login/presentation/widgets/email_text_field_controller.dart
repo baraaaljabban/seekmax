@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seekmax/core/theme/app_syle.dart';
-import 'package:seekmax/core/theme/theme_color.dart';
 import 'package:seekmax/features/login/presentation/bloc/login_bloc.dart';
 
 import 'mixn_outline_input_border.dart';

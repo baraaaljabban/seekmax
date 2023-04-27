@@ -1,3 +1,5 @@
+// ignore_for_file: annotate_overrides, overridden_fields
+
 import 'dart:convert';
 
 import 'package:seekmax/features/job_details/domain/entities/job_details.dart';

@@ -3,7 +3,6 @@ import 'package:seekmax/core/theme/app_syle.dart';
 
 import 'package:seekmax/features/job_details/domain/entities/job_details.dart';
 import 'package:seekmax/features/job_details/presentation/widgets/apply_buttonm_controller.dart';
-import 'package:seekmax/features/login/presentation/widgets/login_button_controller.dart';
 
 class JobDetailsController extends StatelessWidget {
   final JobDetails jobDetails;
@@ -37,7 +36,7 @@ class JobDetailsController extends StatelessWidget {
               const SizedBox(
                 width: 16,
               ),
-              Text("Job description : "),
+              const Text("Job description : "),
               const SizedBox(
                 width: 8,
               ),
@@ -53,7 +52,7 @@ class JobDetailsController extends StatelessWidget {
               const SizedBox(
                 width: 16,
               ),
-              Text("Salary : "),
+              const Text("Salary : "),
               const SizedBox(
                 width: 8,
               ),
@@ -69,7 +68,7 @@ class JobDetailsController extends StatelessWidget {
               const SizedBox(
                 width: 16,
               ),
-              Text("Location : "),
+              const Text("Location : "),
               const SizedBox(
                 width: 8,
               ),
@@ -85,7 +84,7 @@ class JobDetailsController extends StatelessWidget {
               const SizedBox(
                 width: 16,
               ),
-              Text("Industry : "),
+              const Text("Industry : "),
               const SizedBox(
                 width: 8,
               ),

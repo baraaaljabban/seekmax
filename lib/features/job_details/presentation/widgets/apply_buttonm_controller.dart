@@ -28,7 +28,7 @@ class _ApplyButtonControllerState extends State<ApplyButtonController> {
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
-            widget.hasApplied ? Colors.grey[900] : ThemeColor.buttonBackground;
+            return widget.hasApplied ? Colors.grey[900] : ThemeColor.buttonBackground;
           },
         ),
         fixedSize: MaterialStateProperty.all(
@@ -70,6 +70,5 @@ class _ApplyButtonControllerState extends State<ApplyButtonController> {
         ),
       ),
     );
-    ;
   }
 }

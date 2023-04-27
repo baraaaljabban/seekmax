@@ -22,7 +22,7 @@ class _LogoutButtonControllerState extends State<LogoutButtonController> {
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
-            ThemeColor.buttonBackground;
+            return ThemeColor.buttonBackground;
           },
         ),
         fixedSize: MaterialStateProperty.all(
@@ -51,6 +51,5 @@ class _LogoutButtonControllerState extends State<LogoutButtonController> {
         ),
       ),
     );
-    ;
   }
 }

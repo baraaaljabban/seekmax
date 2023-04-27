@@ -1,7 +1,4 @@
-import 'dart:ffi';
-
 import 'package:dartz/dartz.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:seekmax/core/errors/error_handler.dart';
 
 import 'package:seekmax/core/errors/failures.dart';

@@ -24,8 +24,8 @@ mixin ValidationHelper {
 
   bool validateUrl({required String? text}) {
     String pattern = r'(http|https)://[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?';
-    RegExp _regExp = new RegExp(pattern);
-    if (text == null || text.isEmpty || !_regExp.hasMatch(text)) {
+    RegExp regExp = RegExp(pattern);
+    if (text == null || text.isEmpty || !regExp.hasMatch(text)) {
       return false;
     } else {
       return true;
