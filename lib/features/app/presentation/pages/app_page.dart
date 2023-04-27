@@ -23,7 +23,7 @@ class _AppPageState extends State<AppPage> {
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(
-            color: Colors.black,
+            color: Colors.white,
           ),
           systemOverlayStyle: SystemUiOverlayStyle.light,
         ),

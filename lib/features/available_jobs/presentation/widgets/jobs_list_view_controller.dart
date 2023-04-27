@@ -39,8 +39,8 @@ class _JobsListViewControllerState extends State<JobsListViewController> {
           );
         } else {
           return Container(
-            margin: EdgeInsets.all(16),
-            child: Center(child: CircularProgressIndicator()),
+            margin: const EdgeInsets.all(16),
+            child: const Center(child: CircularProgressIndicator()),
           );
         }
       },

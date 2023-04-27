@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seekmax/core/navigation/nav_args.dart';
 import 'package:seekmax/core/navigation/nav_router.dart';
 import 'package:seekmax/core/navigation/navigation_service.dart';
 import 'package:seekmax/core/theme/app_syle.dart';
 import 'package:seekmax/core/theme/theme_color.dart';
 import 'package:seekmax/features/available_jobs/domain/entities/job.dart';
+import 'package:seekmax/features/job_details/presentation/cubit/job_details_cubit.dart';
 
 class JobCard extends StatefulWidget {
   final Job job;
@@ -68,6 +70,29 @@ class _JobCardState extends State<JobCard> {
                 child: Text(
                   widget.job.description,
                   style: AppStyle.subtitle1,
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 8),
+                child: BlocListener<JobDetailsCubit, JobDetailsState>(
+                  listener: (context, state) {
+                    if (state is ApplyResultState) {
+                      if (state.applied && state.jobId == widget.job.jobID) {
+                        setState(() {
+                          widget.job.haveIApplied = true;
+                        });
+                      }
+                    }
+                  },
+                  child: Text(
+                    widget.job.haveIApplied ? "Applied" : "Apply",
+                    style: AppStyle.subtitle2.copyWith(
+                      color: widget.job.haveIApplied ? Colors.red : Colors.green,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(

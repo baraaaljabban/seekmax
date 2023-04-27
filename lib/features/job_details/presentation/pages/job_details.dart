@@ -39,6 +39,20 @@ class _JobDetailsPageState extends State<JobDetailsPage> with SnackBarHelper {
           if (state is JobDetailsFailedState) {
             showErrorSnackBar(context, message: state.message);
           }
+          if (state is ApplyResultState) {
+            if (state.applied) {
+              showSuccessSnackBar(context, message: "Applied Successfully");
+            } else {
+              showErrorSnackBar(context, message: "Apply was not Successfully");
+            }
+          }
+        },
+        buildWhen: (previous, current) {
+          if (current is JobDetailsLoadingState || current is JobDetailsSuccessfulState) {
+            return true;
+          } else {
+            return false;
+          }
         },
         builder: (context, state) {
           if (state is JobDetailsLoadingState) {

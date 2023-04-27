@@ -1,14 +1,12 @@
-import 'package:seekmax/features/available_jobs/domain/entities/salary_rang.dart';
-
 class Job {
   String description;
   String positionTitle;
-  // SalaryRange salaryRange;
+  bool haveIApplied;
   String jobID;
   Job({
     required this.description,
     required this.positionTitle,
-    // required this.salaryRange,
+    required this.haveIApplied,
     required this.jobID,
   });
 }

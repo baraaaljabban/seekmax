@@ -97,6 +97,7 @@ class JobDetailsController extends StatelessWidget {
           ),
           ApplyButtonController(
             hasApplied: jobDetails.haveIApplied,
+            jobId: jobDetails.id,
           ),
         ],
       ),

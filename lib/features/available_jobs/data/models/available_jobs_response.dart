@@ -56,17 +56,17 @@ class Jobs {
 class JobModel extends Job {
   String description;
   String positionTitle;
-  // SalaryRangeModel salaryRangeModel;
   String id;
+  bool haveIApplied;
   JobModel({
     required this.description,
     required this.positionTitle,
-    // required this.salaryRangeModel,
+    required this.haveIApplied,
     required this.id,
   }) : super(
           description: description,
           positionTitle: positionTitle,
-          // salaryRange: salaryRangeModel,
+          haveIApplied: haveIApplied,
           jobID: id,
         );
 
@@ -75,31 +75,9 @@ class JobModel extends Job {
       description: map['description'] ?? '',
       id: map['_id'] ?? '',
       positionTitle: map['positionTitle'] ?? '',
-      // salaryRangeModel: SalaryRangeModel.fromMap(map['salaryRange']),
+      haveIApplied: map['haveIApplied'] ?? false,
     );
   }
 
   factory JobModel.fromJson(String source) => JobModel.fromMap(json.decode(source));
-}
-
-class SalaryRangeModel extends SalaryRange {
-  int min;
-  int max;
-
-  SalaryRangeModel({
-    required this.min,
-    required this.max,
-  }) : super(
-          max: max,
-          min: min,
-        );
-
-  factory SalaryRangeModel.fromMap(Map<String, dynamic> map) {
-    return SalaryRangeModel(
-      min: map['min']?.toInt() ?? 0,
-      max: map['max']?.toInt() ?? 0,
-    );
-  }
-
-  factory SalaryRangeModel.fromJson(String source) => SalaryRangeModel.fromMap(json.decode(source));
 }

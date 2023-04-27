@@ -53,7 +53,7 @@ class JobDetailsModel extends JobDetails {
       industry: map['industry']?.toInt() ?? 0,
       haveIApplied: map['haveIApplied'] ?? false,
       description: map['description'] ?? '',
-      id: map['id'] ?? '',
+      id: map['_id'] ?? '',
     );
   }
 

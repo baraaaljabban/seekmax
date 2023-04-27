@@ -1,6 +1,7 @@
 import 'package:seekmax/features/job_details/data/datasources/job_details_remote_data_source.dart';
 import 'package:seekmax/features/job_details/data/repositories/job_details_repository_imp.dart';
 import 'package:seekmax/features/job_details/domain/repositories/job_details_repository.dart';
+import 'package:seekmax/features/job_details/domain/usecases/apply_job.dart';
 import 'package:seekmax/features/job_details/domain/usecases/fetch_job_details.dart';
 import 'package:seekmax/features/job_details/presentation/cubit/job_details_cubit.dart';
 
@@ -20,9 +21,9 @@ Future<void> registerJobDetailsDeps() async {
   );
 
   sl.registerFactory<FetchJobDetails>(() => FetchJobDetails(repository: sl()));
+  sl.registerFactory<ApplyForJob>(() => ApplyForJob(repository: sl()));
+
   sl.registerFactory<JobDetailsCubit>(
-    () => JobDetailsCubit(
-      fetchJobDetails: sl(),
-    ),
+    () => JobDetailsCubit(fetchJobDetails: sl(), applyForJob: sl()),
   );
 }

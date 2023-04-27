@@ -23,6 +23,7 @@ class AvailableJobsRemoteDataSourceImpl extends AvailableJobsRemoteDataSource wi
           _id
           positionTitle
           description
+          haveIApplied
         }
         hasNext
       }

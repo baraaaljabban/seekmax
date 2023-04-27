@@ -21,3 +21,12 @@ class JobDetailsFailedState extends JobDetailsState {
     required this.message,
   });
 }
+
+class ApplyResultState extends JobDetailsState {
+  final bool applied;
+  final String jobId;
+  ApplyResultState({
+    required this.applied,
+    required this.jobId,
+  });
+}
