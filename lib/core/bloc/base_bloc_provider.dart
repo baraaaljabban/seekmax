@@ -5,6 +5,7 @@ import 'package:seekmax/features/available_jobs/presentation/cubit/available_job
 import 'package:seekmax/features/home/presentation/bloc/home_bloc.dart';
 import 'package:seekmax/features/job_details/presentation/cubit/job_details_cubit.dart';
 import 'package:seekmax/features/login/presentation/bloc/login_bloc.dart';
+import 'package:seekmax/features/profile/presentation/cubit/profile_cubit.dart';
 import 'package:seekmax/features/start_up/presentation/cubit/start_up_cubit.dart';
 
 class BaseBlocProviderWidget extends StatefulWidget {
@@ -34,6 +35,9 @@ class _BaseBlocProviderWidgetState extends State<BaseBlocProviderWidget> {
         ),
         BlocProvider<JobDetailsCubit>(
           create: (context) => sl.get<JobDetailsCubit>(),
+        ),
+        BlocProvider<ProfileCubit>(
+          create: (context) => sl.get<ProfileCubit>(),
         ),
       ],
       child: widget.child,

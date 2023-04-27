@@ -20,7 +20,7 @@ Future<void> registerJobDetailsDeps() async {
   );
 
   sl.registerFactory<FetchJobDetails>(() => FetchJobDetails(repository: sl()));
-  sl.registerLazySingleton<JobDetailsCubit>(
+  sl.registerFactory<JobDetailsCubit>(
     () => JobDetailsCubit(
       fetchJobDetails: sl(),
     ),
