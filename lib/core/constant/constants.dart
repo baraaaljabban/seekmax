@@ -1,1 +1,1 @@
-const baseUrl = 'http://localhost:3002/';
+const baseUrl = 'http://172.29.96.1:3002/';

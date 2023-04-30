@@ -8,8 +8,3 @@ abstract class AppState extends Equatable {
 }
 
 class AppInitial extends AppState {}
-
-class AppIsLoggedInState extends AppState {
-  final bool isLoggedIn;
-  const AppIsLoggedInState({required this.isLoggedIn});
-}
